@@ -28,9 +28,9 @@ function mousePressed(){
             let v = createVector(mouseX,mouseY);            
             titik.push(v);
         }
-
-
+        
     }
+    
 }
 
 
@@ -45,10 +45,8 @@ function draw(){
 
     background(10);
 
-
     let gabung = []; 
     let sendiri = []; 
-
 
     for(let i=0 ; i<titik.length ; i++){
 
@@ -59,10 +57,8 @@ function draw(){
         sendiri[i] = titik[i];              //anggap semua blm dikunjungi
     }
 
-
     gabung[0] = sendiri[0]
     sendiri.splice(0,1);
-
 
     while(sendiri.length > 0){
 
@@ -70,7 +66,7 @@ function draw(){
         let indexA; 
         let indexB; 
 
-
+        
         for(let i=0 ; i<gabung.length ; i++){
 
             for(let j=0 ; j<sendiri.length ; j++){
@@ -96,6 +92,7 @@ function draw(){
         stroke(temp,255-temp,0);
         strokeWeight(2);
         line(v1.x,v1.y,v2.x,v2.y);
+        stroke(255)
 
         gabung.push(sendiri[indexB]);
         sendiri.splice(indexB,1);
